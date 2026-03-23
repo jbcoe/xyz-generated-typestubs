@@ -1,20 +1,27 @@
 [build-system]
 requires = ["scikit-build-core", "nanobind"]
 build-backend = "scikit_build_core.build"
+wheel.packages = ["python/xyz_generated_typestubs"]
 
 [project]
-name = "ty-generated-typestubs"
+name = "xyz-generated-typestubs"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "nanobind",
-    "pytest",
+    "pyrefly>=0.57.1",
+    "pytest>=9.0.2",
 ]
 
 [dependency-groups]
 dev = [
     "ipython>=8.38.0",
-    "ty>=0.0.18",
+    "pre-commit>=4.5.1",
 ]
+
+[tool.ty.environment]
+root = []
+
+[tool.pyrefly]
+#project-excludes = ["build", "dist"]
