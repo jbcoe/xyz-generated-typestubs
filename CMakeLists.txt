@@ -24,6 +24,7 @@ nanobind_add_stub(
   MODULE _core
   MARKER_FILE ${CMAKE_CURRENT_BINARY_DIR}/py.typed
   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/_core.pyi
+  PYTHON_PATH "$<TARGET_FILE_DIR:_core>"
   DEPENDS _core
 )
 
